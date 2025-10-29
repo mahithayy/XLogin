@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./XLogin.css";
 
 function XLogin() {
   const [username, setUsername] = useState("");
@@ -22,22 +21,26 @@ function XLogin() {
   };
 
   return (
-    <div className="login-container">
+    <div>
       <form onSubmit={handleSubmit}>
+        {/* Username */}
         <div>
-          <label htmlFor="username">Username</label><br />
+          <label htmlFor="username">Username</label>
           <input
             id="username"
+            name="username"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
 
+        {/* Password */}
         <div>
-          <label htmlFor="password">Password</label><br />
+          <label htmlFor="password">Password</label>
           <input
             id="password"
+            name="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -47,7 +50,8 @@ function XLogin() {
         <button type="submit">Submit</button>
       </form>
 
-      {message && <p className="message">{message}</p>}
+      {/* Message */}
+      {message && <p>{message}</p>}
     </div>
   );
 }
